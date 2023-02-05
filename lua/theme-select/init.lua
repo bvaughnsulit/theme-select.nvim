@@ -6,9 +6,8 @@ M.setup = function(opts)
 	-- specify theme directly with --cmd arg
 	if type(arg) == "string" then
 		vim.cmd("colorscheme " .. arg)
-
-	-- trigger propmt to select theme on startup
 	elseif arg == true then
+		-- trigger propmt to select theme on startup
 		local available_schemes = vim.fn.getcompletion("", "color")
 
 		-- provide a list of themes to exclude from selection list
