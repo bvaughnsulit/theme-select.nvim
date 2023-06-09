@@ -9,6 +9,7 @@ M.setup = function(opts)
 	elseif arg == true then
 		-- trigger propmt to select theme on startup
 		local available_schemes = vim.fn.getcompletion("", "color")
+    vim.cmd 'colorscheme habamax'
 
 		-- provide a list of themes to exclude from selection list
 		local filtered_schemes = vim.tbl_filter(function(e)
