@@ -5,7 +5,13 @@ local M = {}
 M.setup = function(opts)
   -- specify theme directly with --cmd arg
   if type(arg) == 'string' then
-    vim.cmd('colorscheme ' .. arg)
+    if arg == 'dark' then
+      vim.cmd('colorscheme ' .. opts.default.dark)
+    elseif arg == 'light' then
+      vim.cmd('colorscheme ' .. opts.default.light)
+    else
+      vim.cmd('colorscheme ' .. arg)
+    end
   elseif arg == true then
     -- trigger propmt to select theme on startup
     local available_schemes = vim.fn.getcompletion('', 'color')
